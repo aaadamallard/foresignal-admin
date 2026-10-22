@@ -1,0 +1,50 @@
+# Strict analysis for ForeSignal Admin. `flutter analyze` must be clean on
+# every prompt. The generated API client is excluded: it is never hand-edited,
+# so its findings are the generator's, not this app's.
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  exclude:
+    - lib/api/generated/**
+    - build/**
+  language:
+    strict-casts: true
+    strict-inference: true
+    strict-raw-types: true
+  errors:
+    missing_required_param: error
+    missing_return: error
+    unused_import: error
+    dead_code: warning
+
+formatter:
+  page_width: 100
+  trailing_commas: preserve
+
+linter:
+  rules:
+    - always_declare_return_types
+    - avoid_dynamic_calls
+    - avoid_print
+    - avoid_slow_async_io
+    - avoid_type_to_string
+    - cancel_subscriptions
+    - close_sinks
+    - directives_ordering
+    - literal_only_boolean_expressions
+    - no_adjacent_strings_in_list
+    - only_throw_errors
+    - prefer_const_constructors
+    - prefer_const_declarations
+    - prefer_final_fields
+    - prefer_final_locals
+    - prefer_single_quotes
+    - public_member_api_docs
+    - sort_child_properties_last
+    - test_types_in_equals
+    - throw_in_finally
+    - unawaited_futures
+    - unnecessary_await_in_return
+    - unnecessary_lambdas
+    - unnecessary_statements
+    - use_super_parameters
