@@ -101,10 +101,12 @@
   pointer. I moved the preview to a private virtual display (`Xvfb :99`, unpacked from the Ubuntu
   `xvfb` package into the session scratchpad, not installed system-wide). All later driving and
   screenshots used it, and nothing touched the owner's screen after that.
+<!-- us-english-allow-start: names the contract's own field -->
 - US English: `check_us_english.py` over `lib/*.dart lib/api/*.dart lib/core lib/features test tool
   integration_test` printed `0 British spellings`. The contract's field `licence` (`licence`,
   `licenceTerms`) is read under its real name inside `us-english-allow` regions; everything shown on
   screen says "License".
+<!-- us-english-allow-end -->
 
 ## Owner decision needed
 
