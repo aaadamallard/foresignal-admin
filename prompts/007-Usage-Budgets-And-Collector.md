@@ -8,9 +8,13 @@
 - **Usage & budgets:** per-source and global request/byte usage against budgets and spend over time
   (`getSourceUsage`, `listSourceHealth` budget state, `getStatsTop` / `getStatsTimeseries`). Mobile: a
   glance.
-- **Collector / load governor (desktop):** the paced-ingestion controls from backend prompt 150 —
-  `getCollectorSettings` / `updateCollectorSettings`, with **`maxConcurrentPulls` as a slider (1–16)**.
-  This is where the operator tunes the box to its hardware.
+- **Collector / load governor (desktop):** the paced-ingestion control from backend prompt 150 —
+  `getCollectorSettings` / `updateCollectorSettings`, with **`maxConcurrentPulls` as a slider (1–16)** —
+  plus **live gauges** of the governor working (cap vs in-use vs waiting) from `getCollectorStatus`
+  (backend prompt 160), polled. This is where the operator tunes the box to its hardware.
+  **Do NOT show pull-timeout / retry-attempts / retry-delay controls:** retries are the backend's
+  automatic `Retry-After`-honoring backoff (a knob there would get the instance IP-blocked by free
+  sources), and fetch timeout is a per-source descriptor value, not a global setting.
 - **Rate limits & retention:** `getRateLimits` / `updateRateLimits`; `getRetention` / `updateRetention`
   / `runRetention`.
 

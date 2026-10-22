@@ -14,19 +14,21 @@ the ForeSignal backend. Companion docs: [Product Charter](Product-Charter.md), [
    (review each prompt), unattended ranges are opt-in once the shape is stable.
 3. Each prompt reads the earlier completion reports, implements to its spec, **writes tests but does
    not run them**, runs `flutter analyze` + build, commits, and writes `/completion-reports/NNN-CR-*.md`.
-4. **Screens.md is the screen spec.** `design/` mocks are **optional, owner-supplied refinements** —
-   the control-plane screens are form/table driven and fully specified in Screens.md, so mocks are not
-   a build blocker. Where a mock exists for a screen, match it; otherwise build in the admin design
-   language and let the owner refine at the review gate.
+4. **Screens.md and the `design/` mocks are directional, not exact (owner directive).** Implement as
+   much of each screen as the backend API supports, in the admin design language. Where a mock shows a
+   control, field, or panel the API **cannot** back, **omit it and move on** — do not match the mock
+   element-for-element, and do not stall it as an owner question. Never invent an endpoint. The owner
+   refines at the review gate.
 
 ## 2. Guardrails (in every prompt)
 
 1. **`flutter analyze` is clean** and the build succeeds (`flutter build linux`, the primary desktop
    target, where the toolchain is available). **Tests are written, not run**, until the owner declares
    the project code-complete (same directive as the other ForeSignal repos).
-2. **OpenAPI is the only backend contract.** Every backend call names an `operationId`. A capability
-   the app needs that the spec lacks is an **owner question** in the completion report — never invented,
-   never worked around with app-side logic or a second service.
+2. **OpenAPI is the only backend contract.** Every backend call names an `operationId`; endpoints are
+   **never invented** or worked around with app-side logic or a second service. A UI element a mock
+   shows but the API can't support is simply **omitted** (§1.4), not an owner question. Reserve owner
+   questions for a genuine backend capability gap worth raising — not cosmetic mock mismatches.
 3. **Generated client is never hand-edited** (`lib/api/generated/`).
 4. **Two components** (app ↔ backend); no BFF/proxy/second service.
 5. **Secrets never live in the app** — admin token → platform secure store; provider keys →
