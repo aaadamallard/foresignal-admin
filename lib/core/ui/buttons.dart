@@ -101,8 +101,15 @@ class FormActions extends StatelessWidget {
       padding: const EdgeInsets.only(top: 12),
       child: Row(
         children: <Widget>[
-          ...leading,
-          const Spacer(),
+          Expanded(
+            child: Wrap(
+              spacing: 10,
+              runSpacing: 8,
+              crossAxisAlignment: WrapCrossAlignment.center,
+              children: leading,
+            ),
+          ),
+          const SizedBox(width: 12),
           if (onReset != null) ...<Widget>[
             OutlinedButton(onPressed: busy ? null : onReset, child: const Text('Reset')),
             const SizedBox(width: 10),

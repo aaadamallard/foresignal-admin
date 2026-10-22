@@ -23,6 +23,8 @@ import 'package:foresignal_admin/core/theme_mode.dart';
 import 'package:foresignal_admin/features/connect/connect_controller.dart';
 import 'package:foresignal_admin/features/setup/setup_wizard_store.dart';
 
+import 'preview_sources.dart';
+
 /// The token the fake backend accepts.
 const String previewToken = 'fsr_preview';
 
@@ -91,71 +93,16 @@ final Map<String, Object?> previewBodies = <String, Object?>{
   '/v1/push/devices': <Object?>[],
 };
 
-/// The preview's source catalog (SourceSummary[]); `enableCoreSources`
-/// switches the core ones on.
-final List<Map<String, Object?>> previewSources = <Map<String, Object?>>[
-  _source('usgs-earthquakes', 'USGS Earthquakes', enabled: false, status: 'disabled'),
-  _source('nws-alerts', 'NWS Alerts', enabled: false, status: 'disabled'),
-  _source('celestrak-gp', 'CelesTrak GP', enabled: false, status: 'disabled'),
-  _source('nasa-firms', 'NASA FIRMS', enabled: false, status: 'disabled', needsKey: true),
-  _source('gdelt', 'GDELT', enabled: true, status: 'degraded'),
-  _source('acled', 'ACLED', enabled: true, status: 'failing', needsKey: true),
-  _source('opensky-states', 'OpenSky States', enabled: true, status: 'healthy'),
-];
+/// A preview answer: a JSON body and its status.
+typedef PreviewReply = ({int status, Object? body});
 
-/// The core set `enableCoreSources` turns on in the preview.
-const Set<String> previewCoreSet = <String>{
-  'usgs-earthquakes',
-  'nws-alerts',
-  'celestrak-gp',
-  'nasa-firms',
-};
-
-Map<String, Object?> _source(
-  String id,
-  String name, {
-  required bool enabled,
-  required String status,
-  bool needsKey = false,
-}) => <String, Object?>{
-  'id': id,
-  'name': name,
-  'kinds': <String>['event'],
-  'mode': 'polling',
-  'enabled': enabled,
-  'status': status,
-  'credentialsRequired': needsKey,
-  'credentialsSet': false,
-};
-
-Object? _answer(RequestOptions options) {
-  final path = options.uri.path;
-  if (path == '/v1/sources') {
-    return previewSources;
+PreviewReply? _answer(RequestOptions options, Object? requestBody) {
+  final sources = answerSources(options.method, options.uri.path, requestBody);
+  if (sources != null) {
+    return sources;
   }
-  if (path == '/v1/sources/enable-core' && options.method == 'POST') {
-    final enabled = <String>[];
-    var skipped = 0;
-    for (final source in previewSources) {
-      if (source['enabled'] == true) {
-        continue;
-      }
-      if (previewCoreSet.contains(source['id']) && source['credentialsRequired'] != true) {
-        source['enabled'] = true;
-        source['status'] = 'healthy';
-        enabled.add(source['id']! as String);
-      } else {
-        skipped++;
-      }
-    }
-    // EnableCoreSourcesResult
-    return <String, Object?>{
-      'enabled': enabled..sort(),
-      'count': enabled.length,
-      'skipped': skipped,
-    };
-  }
-  return previewBodies[path];
+  final body = previewBodies[options.uri.path];
+  return body == null ? null : (status: 200, body: body);
 }
 
 class _PreviewAdapter implements HttpClientAdapter {
@@ -175,11 +122,21 @@ class _PreviewAdapter implements HttpClientAdapter {
         problem: true,
       );
     }
-    final body = _answer(options);
-    if (body == null) {
+    Object? requestBody;
+    if (requestStream != null) {
+      final bytes = <int>[];
+      await for (final chunk in requestStream) {
+        bytes.addAll(chunk);
+      }
+      if (bytes.isNotEmpty) {
+        requestBody = jsonDecode(utf8.decode(bytes));
+      }
+    }
+    final reply = _answer(options, requestBody);
+    if (reply == null) {
       return _json(<String, Object?>{'title': 'Not found', 'status': 404}, 404, problem: true);
     }
-    return _json(body, 200);
+    return _json(reply.body, reply.status, problem: reply.status >= 400);
   }
 
   ResponseBody _json(Object? body, int status, {bool problem = false}) => ResponseBody.fromBytes(

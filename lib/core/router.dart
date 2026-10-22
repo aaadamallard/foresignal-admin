@@ -7,6 +7,8 @@ import '../features/connect/connect_screen.dart';
 import '../features/setup/setup_wizard_screen.dart';
 import '../features/shell/app_shell.dart';
 import '../features/shell/section_placeholder.dart';
+import '../features/sources/source_detail_screen.dart';
+import '../features/sources/sources_catalog_screen.dart';
 import 'form_factor.dart';
 import 'nav.dart';
 import 'routes.dart';
@@ -27,11 +29,31 @@ class SectionRoutes {
   final List<RouteBase> routes;
 }
 
-/// The registered section screens, by path. Overridable in tests.
-final sectionRoutesProvider = Provider<Map<String, SectionRoutes>>((ref) => sectionRoutes);
+/// The registered section screens for the current form factor, by path.
+/// Overridable in tests.
+final sectionRoutesProvider = Provider<Map<String, SectionRoutes>>(
+  (ref) => sectionRoutesFor(ref.watch(formFactorProvider)),
+);
 
-/// The registered section screens. Each feature prompt adds its entry.
-final Map<String, SectionRoutes> sectionRoutes = <String, SectionRoutes>{};
+/// The registered section screens. Each feature prompt adds its entry; a
+/// screen that is desktop-only is left out on mobile, so its route does not
+/// exist there.
+Map<String, SectionRoutes> sectionRoutesFor(FormFactor formFactor) {
+  final desktop = formFactor == FormFactor.desktop;
+  return <String, SectionRoutes>{
+    sourcesPath: SectionRoutes(
+      builder: (context, state) => const SourcesCatalogScreen(),
+      routes: <RouteBase>[
+        if (desktop)
+          GoRoute(
+            path: ':sourceId',
+            builder: (context, state) =>
+                SourceDetailScreen(sourceId: state.pathParameters['sourceId']!),
+          ),
+      ],
+    ),
+  };
+}
 
 /// Refreshes the router's redirect when the backend URL changes.
 class _RouterRefresh extends ChangeNotifier {

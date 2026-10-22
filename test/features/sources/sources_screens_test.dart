@@ -1,0 +1,169 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:foresignal_admin/core/connection_store.dart';
+import 'package:foresignal_admin/core/form_factor.dart';
+import 'package:foresignal_admin/core/router.dart';
+import 'package:foresignal_admin/core/routes.dart';
+
+import '../../../tool/preview/preview_sources.dart';
+import '../../support/fake_adapter.dart';
+import '../../support/test_app.dart';
+
+/// A fake backend holding a fresh copy of the preview sources.
+FakeAdapter sourcesBackend([List<PreviewSource>? sources]) {
+  final held = sources ?? buildPreviewSources();
+  final connect = connectBackend();
+  return FakeAdapter((request) {
+    final reply = answerSources(request.method, request.uri.path, request.body, held);
+    if (reply != null) {
+      return reply.status >= 400
+          ? FakeResponse.problem(reply.body! as Map<String, Object?>, status: reply.status)
+          : FakeResponse.json(reply.body, status: reply.status);
+    }
+    return connect.handler(request);
+  });
+}
+
+Future<FakeAdapter> openAt(
+  WidgetTester tester,
+  String path, {
+  FakeAdapter? adapter,
+  FormFactor formFactor = FormFactor.desktop,
+}) async {
+  tester.view.physicalSize = formFactor == FormFactor.desktop
+      ? const Size(1500, 1100)
+      : const Size(420, 900);
+  tester.view.devicePixelRatio = 1;
+  addTearDown(tester.view.reset);
+  final backend = adapter ?? sourcesBackend();
+  final container = testContainer(
+    adapter: backend,
+    formFactor: formFactor,
+    store: InMemoryConnectionStore(url: Uri.parse('http://h:8080'), token: 'fsr_good'),
+    connectedTo: Uri.parse('http://h:8080'),
+  );
+  addTearDown(container.dispose);
+  await tester.pumpWidget(testApp(container));
+  await tester.pumpAndSettle();
+  container.read(routerProvider).go(path);
+  await tester.pumpAndSettle();
+  return backend;
+}
+
+void main() {
+  testWidgets('the catalog lists every source with tab counts', (tester) async {
+    await openAt(tester, sourcesPath);
+    expect(find.text('USGS Earthquakes'), findsOneWidget);
+    expect(find.text('OpenSky States'), findsOneWidget);
+    expect(find.text('8'), findsWidgets); // All Sources
+    expect(find.text('Not set'), findsNWidgets(2)); // ACLED, NASA FIRMS
+  });
+
+  testWidgets('search and the Enabled tab filter the table', (tester) async {
+    await openAt(tester, sourcesPath);
+    await tester.enterText(find.byKey(const Key('sources.search')).last, 'usgs');
+    await tester.pumpAndSettle();
+    expect(find.text('USGS Earthquakes'), findsOneWidget);
+    expect(find.text('GDELT'), findsNothing);
+
+    await tester.enterText(find.byKey(const Key('sources.search')).last, '');
+    await tester.tap(find.byKey(const Key('sources.tab.enabled')));
+    await tester.pumpAndSettle();
+    expect(find.text('GDELT'), findsOneWidget);
+    expect(find.text('USGS Earthquakes'), findsNothing);
+  });
+
+  testWidgets('the enabled switch writes, then re-reads the source', (tester) async {
+    final adapter = await openAt(tester, sourcesPath);
+    await tester.tap(find.byKey(const Key('sources.enabled.gdacs')));
+    await tester.pumpAndSettle();
+    final put = adapter.requests.singleWhere((r) => r.method == 'PUT');
+    expect(put.uri.path, '/v1/sources/gdacs');
+    expect(put.body, <String, Object?>{'enabled': true});
+    expect(put.options.headers['Authorization'], 'Bearer fsr_good');
+    final after = adapter.requests.indexOf(put);
+    expect(
+      adapter.requests
+          .skip(after + 1)
+          .any((r) => r.method == 'GET' && r.uri.path == '/v1/sources/gdacs'),
+      isTrue,
+    );
+    final toggle = tester.widget<Switch>(find.byKey(const Key('sources.enabled.gdacs')));
+    expect(toggle.value, isTrue);
+  });
+
+  testWidgets('enabling a source without its key shows the refusal', (tester) async {
+    await openAt(tester, sourcesPath);
+    await tester.tap(find.byKey(const Key('sources.enabled.nasa-firms')));
+    await tester.pumpAndSettle();
+    expect(find.textContaining('CREDENTIALS_REQUIRED'), findsWidgets);
+    final toggle = tester.widget<Switch>(find.byKey(const Key('sources.enabled.nasa-firms')));
+    expect(toggle.value, isFalse);
+  });
+
+  testWidgets('Enable Free Sources posts and shows what it enabled', (tester) async {
+    final adapter = await openAt(tester, sourcesPath);
+    await tester.tap(find.byKey(const Key('sources.enableFree')));
+    await tester.pumpAndSettle();
+    final post = adapter.requests.singleWhere((r) => r.uri.path == '/v1/sources/enable-free');
+    expect(post.method, 'POST');
+    expect(find.byKey(const Key('sources.bulkResult')), findsOneWidget);
+    expect(find.textContaining('Enabled 4 sources'), findsOneWidget);
+  });
+
+  testWidgets('tapping a row opens its detail on desktop', (tester) async {
+    await openAt(tester, sourcesPath);
+    await tester.tap(find.text('GDELT'));
+    await tester.pumpAndSettle();
+    expect(find.text('Source information'), findsOneWidget);
+    expect(find.text('Test Source'), findsOneWidget);
+  });
+
+  testWidgets('a settings edit is saved, re-read and confirmed', (tester) async {
+    final adapter = await openAt(tester, sourceDetailPath('usgs-earthquakes'));
+    await tester.tap(find.byKey(const Key('source.tab.configuration')));
+    await tester.pumpAndSettle();
+    final interval = find.byWidgetPredicate(
+      (w) =>
+          w.key is ValueKey<String> &&
+          (w.key! as ValueKey<String>).value.startsWith('config.interval.'),
+    );
+    await tester.enterText(interval, '30m');
+    await tester.tap(find.byKey(const Key('form.save')));
+    await tester.pumpAndSettle();
+
+    final put = adapter.requests.singleWhere((r) => r.method == 'PUT');
+    expect(put.body, <String, Object?>{'interval': '30m'});
+    final after = adapter.requests.indexOf(put);
+    expect(
+      adapter.requests.skip(after + 1).any((r) => r.uri.path == '/v1/sources/usgs-earthquakes'),
+      isTrue,
+    );
+    expect(find.textContaining('Saved and confirmed'), findsOneWidget);
+  });
+
+  testWidgets('an interval below the minimum is refused before any request', (tester) async {
+    final adapter = await openAt(tester, sourceDetailPath('usgs-earthquakes'));
+    await tester.tap(find.byKey(const Key('source.tab.configuration')));
+    await tester.pumpAndSettle();
+    final interval = find.byWidgetPredicate(
+      (w) =>
+          w.key is ValueKey<String> &&
+          (w.key! as ValueKey<String>).value.startsWith('config.interval.'),
+    );
+    await tester.enterText(interval, '10s');
+    await tester.tap(find.byKey(const Key('form.save')));
+    await tester.pumpAndSettle();
+    expect(adapter.requests.where((r) => r.method == 'PUT'), isEmpty);
+    expect(find.textContaining('The shortest interval'), findsOneWidget);
+  });
+
+  testWidgets('mobile browses and toggles but has no detail route', (tester) async {
+    await openAt(tester, sourcesPath, formFactor: FormFactor.mobile);
+    expect(find.text('GDELT'), findsOneWidget);
+    expect(find.byKey(const Key('sources.enableCore')), findsNothing);
+    await tester.tap(find.text('GDELT'));
+    await tester.pumpAndSettle();
+    expect(find.text('Source information'), findsNothing);
+  });
+}

@@ -56,13 +56,9 @@ class PageHeader extends StatelessWidget {
             Breadcrumbs(crumbs: crumbs),
             const SizedBox(height: 10),
           ],
-          Wrap(
-            spacing: 12,
-            runSpacing: 12,
-            crossAxisAlignment: WrapCrossAlignment.center,
-            alignment: WrapAlignment.spaceBetween,
-            children: <Widget>[
-              Wrap(
+          LayoutBuilder(
+            builder: (context, constraints) {
+              final heading = Wrap(
                 spacing: 16,
                 runSpacing: 8,
                 crossAxisAlignment: WrapCrossAlignment.center,
@@ -70,9 +66,27 @@ class PageHeader extends StatelessWidget {
                   Text(title, style: theme.textTheme.headlineSmall),
                   ...titleTrailing,
                 ],
-              ),
-              if (actions.isNotEmpty) Wrap(spacing: 10, runSpacing: 8, children: actions),
-            ],
+              );
+              final buttons = Wrap(spacing: 10, runSpacing: 8, children: actions);
+              if (actions.isEmpty) {
+                return heading;
+              }
+              // Wide: title left, actions right-aligned as in the mocks.
+              // Narrow: the actions wrap below the title.
+              if (constraints.maxWidth >= 720) {
+                return Row(
+                  children: <Widget>[
+                    Expanded(child: heading),
+                    const SizedBox(width: 12),
+                    buttons,
+                  ],
+                );
+              }
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[heading, const SizedBox(height: 12), buttons],
+              );
+            },
           ),
           if (subtitle != null) ...<Widget>[
             const SizedBox(height: 6),

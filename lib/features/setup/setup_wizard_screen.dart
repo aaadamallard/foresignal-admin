@@ -9,6 +9,7 @@ import '../../core/theme.dart';
 import '../../core/ui/ui.dart';
 import '../connect/connect_screen.dart';
 import '../sources/source_providers.dart';
+import '../sources/source_widgets.dart';
 import 'setup_data.dart';
 import 'setup_wizard_store.dart';
 
@@ -457,33 +458,6 @@ class ValidateStep extends ConsumerWidget {
           ],
         );
       },
-    );
-  }
-}
-
-/// A source health status as the mocks show it: "● Healthy", "● Degraded".
-class HealthLabel extends StatelessWidget {
-  /// Creates the label.
-  const HealthLabel({super.key, required this.status});
-
-  /// The status.
-  final HealthStatus status;
-
-  /// The tone for [status].
-  static StatusTone toneOf(HealthStatus status) => switch (status.name) {
-    'healthy' => StatusTone.ok,
-    'degraded' => StatusTone.warning,
-    'failing' => StatusTone.error,
-    _ => StatusTone.neutral,
-  };
-
-  @override
-  Widget build(BuildContext context) {
-    final name = status.name;
-    return StatusLabel(
-      label: name.isEmpty ? name : '${name[0].toUpperCase()}${name.substring(1)}',
-      tone: toneOf(status),
-      icon: Icons.circle,
     );
   }
 }
