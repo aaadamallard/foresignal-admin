@@ -4,10 +4,12 @@ import 'package:go_router/go_router.dart';
 
 import '../api/backend_endpoint.dart';
 import '../features/connect/connect_screen.dart';
+import '../features/setup/setup_wizard_screen.dart';
 import '../features/shell/app_shell.dart';
 import '../features/shell/section_placeholder.dart';
 import 'form_factor.dart';
 import 'nav.dart';
+import 'routes.dart';
 
 /// Builds the screen for a section path. Later prompts register their real
 /// screens here; a path with no entry shows [SectionPlaceholder].
@@ -51,6 +53,12 @@ final routerProvider = Provider<GoRouter>((ref) {
   final router = GoRouter(
     initialLocation: sections.first.path,
     refreshListenable: refresh,
+    // A deep link to a screen not mounted yet (or not on this form factor)
+    // lands on its section instead of an error page.
+    onException: (context, state, router) {
+      final root = sectionRootOf(state.uri.path);
+      router.go(sections.any((s) => s.path == root) ? root : connectPath);
+    },
     redirect: (context, state) {
       final connected = ref.read(backendEndpointProvider) != null;
       if (!connected && state.matchedLocation != connectPath) {
@@ -71,6 +79,8 @@ final routerProvider = Provider<GoRouter>((ref) {
               routes: registry[section.path]?.routes ?? const <RouteBase>[],
             ),
           GoRoute(path: connectPath, builder: (context, state) => const ConnectScreen()),
+          if (formFactor == FormFactor.desktop)
+            GoRoute(path: setupPath, builder: (context, state) => const SetupWizardScreen()),
         ],
       ),
     ],

@@ -1,25 +1,104 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../api/api.dart';
 import '../../core/connection_store.dart';
+import '../../core/form_factor.dart';
+import '../../core/routes.dart';
 import '../../core/theme.dart';
 import '../../core/ui/ui.dart';
+import '../setup/setup_wizard_store.dart';
 import 'connect_controller.dart';
 
 /// Connect (Screens.md §A, mock A1): the backend URL and admin token, tested
 /// with `getSystem`, `getContract` and `getServerSettings`, then saved — the
 /// token to the platform secure store unless the operator unticks it.
-/// Failures are shown here, never as a crash.
-class ConnectScreen extends ConsumerStatefulWidget {
+/// Failures are shown here, never as a crash. On the desktop, the first
+/// successful admin connection opens the setup wizard.
+class ConnectScreen extends ConsumerWidget {
   /// Creates the screen.
   const ConnectScreen({super.key});
 
+  Future<void> _connected(BuildContext context, WidgetRef ref, ConnectionReport report) async {
+    if (ref.read(formFactorProvider) != FormFactor.desktop || !report.canConfigure) {
+      return;
+    }
+    final status = await ref.read(setupWizardStoreProvider).read();
+    if (status == null && context.mounted) {
+      context.go(setupPath);
+    }
+  }
+
   @override
-  ConsumerState<ConnectScreen> createState() => _ConnectScreenState();
+  Widget build(BuildContext context, WidgetRef ref) {
+    final state = ref.watch(connectControllerProvider);
+    final desktop = ref.watch(formFactorProvider) == FormFactor.desktop;
+    return SingleChildScrollView(
+      padding: const EdgeInsets.all(28),
+      child: Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 640),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              Card(
+                child: Padding(
+                  padding: const EdgeInsets.all(28),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: <Widget>[
+                      Row(
+                        children: <Widget>[
+                          Expanded(
+                            child: Text(
+                              'Connect to ForeSignal',
+                              style: Theme.of(context).textTheme.headlineSmall,
+                            ),
+                          ),
+                          if (desktop && ref.watch(backendEndpointProvider) != null)
+                            TextButton.icon(
+                              key: const Key('connect.openWizard'),
+                              onPressed: () => context.go(setupPath),
+                              icon: const Icon(Icons.auto_fix_high, size: 16),
+                              label: const Text('Setup wizard'),
+                            ),
+                        ],
+                      ),
+                      const SizedBox(height: 20),
+                      ConnectForm(onConnected: (report) => _connected(context, ref, report)),
+                    ],
+                  ),
+                ),
+              ),
+              if (state is ConnectTested) ...<Widget>[
+                const SizedBox(height: 16),
+                ConnectionDetails(report: state.report),
+              ],
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 }
 
-class _ConnectScreenState extends ConsumerState<ConnectScreen> {
+/// The connection form shared by Connect and the setup wizard's first step:
+/// backend URL, admin token, "Save token in secure storage", Test
+/// Connection, and the outcome panel.
+class ConnectForm extends ConsumerStatefulWidget {
+  /// Creates the form; [onConnected] runs after a test whose connection was
+  /// saved.
+  const ConnectForm({super.key, this.onConnected});
+
+  /// Called with the report after a successful, saved test.
+  final void Function(ConnectionReport report)? onConnected;
+
+  @override
+  ConsumerState<ConnectForm> createState() => _ConnectFormState();
+}
+
+class _ConnectFormState extends ConsumerState<ConnectForm> {
   final TextEditingController _url = TextEditingController();
   final TextEditingController _token = TextEditingController();
   bool _showToken = false;
@@ -65,6 +144,7 @@ class _ConnectScreenState extends ConsumerState<ConnectScreen> {
     if (state is ConnectTested && state.saved) {
       _token.clear();
       await _load();
+      widget.onConnected?.call(state.report);
     }
   }
 
@@ -78,115 +158,81 @@ class _ConnectScreenState extends ConsumerState<ConnectScreen> {
   Widget build(BuildContext context) {
     final state = ref.watch(connectControllerProvider);
     final testing = state is ConnectTesting;
-    return SingleChildScrollView(
-      padding: const EdgeInsets.all(28),
-      child: Center(
-        child: ConstrainedBox(
-          constraints: const BoxConstraints(maxWidth: 640),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-              Card(
-                child: Padding(
-                  padding: const EdgeInsets.all(28),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: <Widget>[
-                      Text(
-                        'Connect to ForeSignal',
-                        style: Theme.of(context).textTheme.headlineSmall,
-                      ),
-                      const SizedBox(height: 20),
-                      const _FieldLabel('Backend URL'),
-                      TextField(
-                        key: const Key('connect.url'),
-                        controller: _url,
-                        enabled: !testing,
-                        keyboardType: TextInputType.url,
-                        autocorrect: false,
-                        decoration: const InputDecoration(hintText: 'http://192.168.1.20:8080'),
-                      ),
-                      const SizedBox(height: 16),
-                      const _FieldLabel('Admin token'),
-                      TextField(
-                        key: const Key('connect.token'),
-                        controller: _token,
-                        enabled: !testing,
-                        obscureText: !_showToken,
-                        autocorrect: false,
-                        enableSuggestions: false,
-                        decoration: InputDecoration(
-                          hintText: _hasToken
-                              ? 'A token is in use — leave blank to keep it'
-                              : 'fsr_…',
-                          helperText:
-                              'Printed once in the backend\'s first-start log. Leave blank for read-only.',
-                          suffixIcon: IconButton(
-                            tooltip: _showToken ? 'Hide' : 'Show',
-                            icon: Icon(_showToken ? Icons.visibility_off : Icons.visibility),
-                            onPressed: () => setState(() => _showToken = !_showToken),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(height: 8),
-                      Row(
-                        children: <Widget>[
-                          Checkbox(
-                            key: const Key('connect.saveToken'),
-                            value: _saveToken,
-                            onChanged: testing
-                                ? null
-                                : (v) => setState(() => _saveToken = v ?? true),
-                          ),
-                          const Expanded(child: Text('Save token in secure storage')),
-                          if (_hasToken)
-                            TextButton.icon(
-                              key: const Key('connect.forget'),
-                              onPressed: testing ? null : _forget,
-                              icon: const Icon(Icons.key_off, size: 16),
-                              label: const Text('Forget token'),
-                            ),
-                        ],
-                      ),
-                      const SizedBox(height: 12),
-                      FilledButton(
-                        key: const Key('connect.test'),
-                        onPressed: testing ? null : _test,
-                        child: testing
-                            ? const SizedBox(
-                                width: 18,
-                                height: 18,
-                                child: CircularProgressIndicator(
-                                  strokeWidth: 2,
-                                  color: Colors.white,
-                                ),
-                              )
-                            : const Text('Test Connection'),
-                      ),
-                      const SizedBox(height: 20),
-                      switch (state) {
-                        ConnectIdle() || ConnectTesting() => const SizedBox.shrink(),
-                        ConnectFailed(:final error) => ErrorBanner(
-                          error: error is FormatException ? error.message : error,
-                          title: error is FormatException ? 'Check the URL' : 'Connection failed',
-                        ),
-                        ConnectTested(:final report, :final saved) => ConnectionResult(
-                          report: report,
-                          saved: saved,
-                        ),
-                      },
-                    ],
-                  ),
-                ),
-              ),
-              if (state is ConnectTested) ...<Widget>[
-                const SizedBox(height: 16),
-                ConnectionDetails(report: state.report),
-              ],
-            ],
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: <Widget>[
+        const _FieldLabel('Backend URL'),
+        TextField(
+          key: const Key('connect.url'),
+          controller: _url,
+          enabled: !testing,
+          keyboardType: TextInputType.url,
+          autocorrect: false,
+          decoration: const InputDecoration(hintText: 'http://192.168.1.20:8080'),
+        ),
+        const SizedBox(height: 16),
+        const _FieldLabel('Admin token'),
+        TextField(
+          key: const Key('connect.token'),
+          controller: _token,
+          enabled: !testing,
+          obscureText: !_showToken,
+          autocorrect: false,
+          enableSuggestions: false,
+          decoration: InputDecoration(
+            hintText: _hasToken ? 'A token is in use — leave blank to keep it' : 'fsr_…',
+            helperText:
+                'Printed once in the backend\'s first-start log. Leave blank for read-only.',
+            suffixIcon: IconButton(
+              tooltip: _showToken ? 'Hide' : 'Show',
+              icon: Icon(_showToken ? Icons.visibility_off : Icons.visibility),
+              onPressed: () => setState(() => _showToken = !_showToken),
+            ),
           ),
         ),
-      ),
+        const SizedBox(height: 8),
+        Row(
+          children: <Widget>[
+            Checkbox(
+              key: const Key('connect.saveToken'),
+              value: _saveToken,
+              onChanged: testing ? null : (v) => setState(() => _saveToken = v ?? true),
+            ),
+            const Expanded(child: Text('Save token in secure storage')),
+            if (_hasToken)
+              TextButton.icon(
+                key: const Key('connect.forget'),
+                onPressed: testing ? null : _forget,
+                icon: const Icon(Icons.key_off, size: 16),
+                label: const Text('Forget token'),
+              ),
+          ],
+        ),
+        const SizedBox(height: 12),
+        FilledButton(
+          key: const Key('connect.test'),
+          onPressed: testing ? null : _test,
+          child: testing
+              ? const SizedBox(
+                  width: 18,
+                  height: 18,
+                  child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white),
+                )
+              : const Text('Test Connection'),
+        ),
+        const SizedBox(height: 20),
+        switch (state) {
+          ConnectIdle() || ConnectTesting() => const SizedBox.shrink(),
+          ConnectFailed(:final error) => ErrorBanner(
+            error: error is FormatException ? error.message : error,
+            title: error is FormatException ? 'Check the URL' : 'Connection failed',
+          ),
+          ConnectTested(:final report, :final saved) => ConnectionResult(
+            report: report,
+            saved: saved,
+          ),
+        },
+      ],
     );
   }
 }

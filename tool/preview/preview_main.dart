@@ -2,7 +2,11 @@
 // schemas, so screens can be shown and screenshotted without any live
 // ForeSignal. Nothing here ships: it is a separate entry point.
 //
-//   flutter build linux -t tool/preview/preview_main.dart --dart-define=THEME=light
+//   flutter build linux -t tool/preview/preview_main.dart \
+//     --dart-define=THEME=light --dart-define=CONNECTED=true
+//
+// CONNECTED=true starts already connected with the preview token, and the
+// setup wizard counts as never run.
 //
 // The fake accepts the admin token `fsr_preview`; any other token is
 // answered 401, as `getServerSettings` would.
@@ -17,6 +21,7 @@ import 'package:foresignal_admin/app.dart';
 import 'package:foresignal_admin/core/connection_store.dart';
 import 'package:foresignal_admin/core/theme_mode.dart';
 import 'package:foresignal_admin/features/connect/connect_controller.dart';
+import 'package:foresignal_admin/features/setup/setup_wizard_store.dart';
 
 /// The token the fake backend accepts.
 const String previewToken = 'fsr_preview';
@@ -57,7 +62,101 @@ final Map<String, Object?> previewBodies = <String, Object?>{
     'publicBaseUrl': 'http://foresignal.local:8080',
     'timezone': 'America/Chicago',
   },
+  // TriggerRule[]
+  '/v1/triggers': <Object?>[
+    <String, Object?>{
+      'id': '7b0e7f0c-3c55-4a43-9f53-0d9b1f0b6a01',
+      'name': 'M5+ earthquakes',
+      'enabled': true,
+      'createdAt': '2026-10-20T10:00:00Z',
+      'updatedAt': '2026-10-20T10:00:00Z',
+    },
+  ],
+  // Channel[]
+  '/v1/channels': <Object?>[],
+  // PushProvider[]
+  '/v1/push/providers': <Object?>[
+    <String, Object?>{
+      'id': 'fcm-main',
+      'type': 'fcm',
+      'appIds': <String>['com.foresignal.admin'],
+      'config': <String, Object?>{
+        'projectId': 'foresignal-home',
+        'clientEmail': 'push@foresignal-home.iam.example',
+      },
+      'enabled': true,
+    },
+  ],
+  // PushDevice[]
+  '/v1/push/devices': <Object?>[],
 };
+
+/// The preview's source catalog (SourceSummary[]); `enableCoreSources`
+/// switches the core ones on.
+final List<Map<String, Object?>> previewSources = <Map<String, Object?>>[
+  _source('usgs-earthquakes', 'USGS Earthquakes', enabled: false, status: 'disabled'),
+  _source('nws-alerts', 'NWS Alerts', enabled: false, status: 'disabled'),
+  _source('celestrak-gp', 'CelesTrak GP', enabled: false, status: 'disabled'),
+  _source('nasa-firms', 'NASA FIRMS', enabled: false, status: 'disabled', needsKey: true),
+  _source('gdelt', 'GDELT', enabled: true, status: 'degraded'),
+  _source('acled', 'ACLED', enabled: true, status: 'failing', needsKey: true),
+  _source('opensky-states', 'OpenSky States', enabled: true, status: 'healthy'),
+];
+
+/// The core set `enableCoreSources` turns on in the preview.
+const Set<String> previewCoreSet = <String>{
+  'usgs-earthquakes',
+  'nws-alerts',
+  'celestrak-gp',
+  'nasa-firms',
+};
+
+Map<String, Object?> _source(
+  String id,
+  String name, {
+  required bool enabled,
+  required String status,
+  bool needsKey = false,
+}) => <String, Object?>{
+  'id': id,
+  'name': name,
+  'kinds': <String>['event'],
+  'mode': 'polling',
+  'enabled': enabled,
+  'status': status,
+  'credentialsRequired': needsKey,
+  'credentialsSet': false,
+};
+
+Object? _answer(RequestOptions options) {
+  final path = options.uri.path;
+  if (path == '/v1/sources') {
+    return previewSources;
+  }
+  if (path == '/v1/sources/enable-core' && options.method == 'POST') {
+    final enabled = <String>[];
+    var skipped = 0;
+    for (final source in previewSources) {
+      if (source['enabled'] == true) {
+        continue;
+      }
+      if (previewCoreSet.contains(source['id']) && source['credentialsRequired'] != true) {
+        source['enabled'] = true;
+        source['status'] = 'healthy';
+        enabled.add(source['id']! as String);
+      } else {
+        skipped++;
+      }
+    }
+    // EnableCoreSourcesResult
+    return <String, Object?>{
+      'enabled': enabled..sort(),
+      'count': enabled.length,
+      'skipped': skipped,
+    };
+  }
+  return previewBodies[path];
+}
 
 class _PreviewAdapter implements HttpClientAdapter {
   @override
@@ -76,7 +175,7 @@ class _PreviewAdapter implements HttpClientAdapter {
         problem: true,
       );
     }
-    final body = previewBodies[path];
+    final body = _answer(options);
     if (body == null) {
       return _json(<String, Object?>{'title': 'Not found', 'status': 404}, 404, problem: true);
     }
@@ -102,13 +201,24 @@ Dio _previewDio(Uri baseUrl, String? token) =>
 
 void main() {
   const theme = String.fromEnvironment('THEME', defaultValue: 'dark');
+  const connected = bool.fromEnvironment('CONNECTED');
   WidgetsFlutterBinding.ensureInitialized();
-  final store = InMemoryConnectionStore();
+  final previewUrl = Uri.parse('http://foresignal.local:8080');
+  final store = connected
+      ? InMemoryConnectionStore(url: previewUrl, token: previewToken)
+      : InMemoryConnectionStore();
   final container = ProviderContainer(
     overrides: [
       connectionStoreProvider.overrideWithValue(store),
       adminTokenStoreProvider.overrideWithValue(store),
       themePreferenceStoreProvider.overrideWithValue(InMemoryThemeStore()),
+      setupWizardStoreProvider.overrideWithValue(InMemorySetupWizardStore()),
+      backendDioProvider.overrideWith(
+        (ref) => createBackendDio(
+          baseUrl: ref.watch(backendEndpointProvider),
+          tokenStore: ref.watch(adminTokenStoreProvider),
+        )..httpClientAdapter = _PreviewAdapter(),
+      ),
       connectionProbeApiProvider.overrideWithValue(
         (baseUrl, token) =>
             ForesignalApi(dio: _previewDio(baseUrl, token), interceptors: const <Interceptor>[]),

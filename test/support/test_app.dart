@@ -7,6 +7,7 @@ import 'package:foresignal_admin/core/connection_store.dart';
 import 'package:foresignal_admin/core/form_factor.dart';
 import 'package:foresignal_admin/core/theme_mode.dart';
 import 'package:foresignal_admin/features/connect/connect_controller.dart';
+import 'package:foresignal_admin/features/setup/setup_wizard_store.dart';
 
 import 'fake_adapter.dart';
 
@@ -17,6 +18,7 @@ ProviderContainer testContainer({
   FormFactor formFactor = FormFactor.desktop,
   InMemoryConnectionStore? store,
   Uri? connectedTo,
+  InMemorySetupWizardStore? wizardStore,
 }) {
   final connection = store ?? InMemoryConnectionStore();
   final container = ProviderContainer(
@@ -24,6 +26,7 @@ ProviderContainer testContainer({
       connectionStoreProvider.overrideWithValue(connection),
       adminTokenStoreProvider.overrideWithValue(connection),
       themePreferenceStoreProvider.overrideWithValue(InMemoryThemeStore()),
+      setupWizardStoreProvider.overrideWithValue(wizardStore ?? InMemorySetupWizardStore()),
       formFactorProvider.overrideWithValue(formFactor),
       connectionProbeApiProvider.overrideWithValue(
         (baseUrl, token) => ForesignalApi(
